@@ -32,6 +32,7 @@ export default class Article extends Component {
         const {isOpen} = this.state;
         return(
             <div>
+                {new Date().toLocaleString()}
                 <h3>{article.title}</h3>
                 <button onClick={this.toggleOpen}>{isOpen ? 'close' : 'open'}</button>
                 {this.getBody()}
