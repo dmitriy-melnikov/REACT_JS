@@ -1,46 +1,38 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {filtratedArticlesSelector} from '../selectors'
-import {loadAllArticles} from '../AC'
-import Loader from './Loader'
-import {NavLink} from 'react-router-dom'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class ArticleList extends Component {
-    static propTypes = {
-        //from connect
-        articles: PropTypes.array.isRequired,
-        //from accordion
-        openItemId: PropTypes.string,
-        toggleOpenItem: PropTypes.func
-    }
+import Article from './Article';
+import CommentList from './CommentList';
 
-    componentDidMount() {
-        const {loaded, loading, loadAllArticles} = this.props
-        if (!loaded && !loading) loadAllArticles()
-    }
 
-    render() {
-        const { articles, loading } = this.props
-        if (loading) return <Loader/>
-        const articleElements = articles.map(article => <li key={article.id}>
-            <NavLink to = {`/articles/${article.id}`} activeStyle = {{color: 'red'}}>
-                {article.title}
-            </NavLink>
-        </li>)
 
-        return (
+/*export default function ArticleList({articles}) {
+    const articleElements = articles.map(article => <li><Article article = {article}/></li>)
+    return(
             <ul>
                 {articleElements}
             </ul>
         )
+}*/
+export default class ArticleList extends Component {
+    static propTypes = {
+        articles: PropTypes.array.isRequired
+    };
+    constructor(props) {
+        super(props);
+    }
+    getBody() {
+        const {articles} = this.props;
+        return articles.map((article) => <li key={article.id}>
+            <Article article={article}/>
+            <CommentList comments={article.comments}/>
+        </li>);
+    }
+    render() {
+        return(
+            <ul>
+                {this.getBody()}
+            </ul>
+        )
     }
 }
-
-export default connect((state) => {
-    return {
-        articles: filtratedArticlesSelector(state),
-        loading: state.articles.loading,
-        loaded: state.articles.loaded
-    }
-}, {loadAllArticles})(ArticleList)
