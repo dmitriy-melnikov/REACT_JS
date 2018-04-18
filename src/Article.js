@@ -17,10 +17,14 @@ export default class Article extends Component {
         };
         //this.toggleOpen = this.toggleOpen.bind(this);
     }
-    toggleOpen = () =>
+    toggleOpen = (ev) =>{
+        console.log(ev.nativeEvent);
+        ev.preventDefault();
         this.setState({
             isOpen : !this.state.isOpen
         });
+    };
+
     getBody() {
         if (!this.state.isOpen) return null;
         const {article} = this.props;
