@@ -1,15 +1,17 @@
-var path = require('path')
+const path = require('path');
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: "source-map",
+    context: path.join(__dirname, "src"),
     entry: [
-        './src/index.js'
+        './index.js'
     ],
     output: {
         path: path.join(__dirname, 'build'),
         filename: 'bundle.js',
         publicPath: '/static/'
     },
+    watch: true,
     devServer: {
         proxy: [{
             path: '/api/',
@@ -30,4 +32,4 @@ module.exports = {
             }
         ]
     }
-}
+};
