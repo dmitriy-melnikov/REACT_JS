@@ -5,6 +5,7 @@ export default (OriginalComponent) => class WrapperComponent extends ReactCompon
         isOpen: false
     };
 
+
     render() {
         return <OriginalComponent {...this.props} {...this.state} toggleOpen = {this.toggleOpen}/>
     }

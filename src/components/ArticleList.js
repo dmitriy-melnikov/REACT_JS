@@ -20,10 +20,10 @@ import accordion  from '../decorators/accordeon';
     static propTypes = {
         articles: PropTypes.array.isRequired
     };
-    /*state = {
-        openArticleId: null
-    };*/
-    /*constructor(props) {
+     /*state = {
+         openArticleId: null
+     };*/
+    /*constructor(props)  {
         super(props);
     }*/
     getBody() {
@@ -53,8 +53,8 @@ import accordion  from '../decorators/accordeon';
             openArticleId
         })
     };*/
-    /*setCommentRef = (ref) => {
-        console.log('commentRef --------',findDOMNode(ref) );
-    }*/
+    setCommentRef = (ref) => {
+        //console.log('commentRef --------',findDOMNode(ref) );
+    }
 }
 export default accordion(ArticleList);

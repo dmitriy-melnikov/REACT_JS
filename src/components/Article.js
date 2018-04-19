@@ -20,6 +20,7 @@ class Article extends Component {
             title: PropTypes.string.isRequired
         }).isRequired
     };
+
     constructor(props) {
         super(props);
         /*this.state = {
@@ -35,19 +36,27 @@ class Article extends Component {
         });
     };*/// in decorator toggleOpen
 
+
+
     getBody() {
         const {article, isOpen} = this.props;
         if (!isOpen) return null;
-        return <section>{article.text}</section>;
+        return <section>{article.text}
+        </section>;
     }
     componentWillReceiveProps(nextProps) {
-        console.log('____', 'updating', this.props.isOpen, nextProps.isOpen);
+        //console.log('____', 'updating', this.props.isOpen, nextProps.isOpen);
     }
     componentWillMount() {
-        console.log('component ______________mounting');
+        //console.log('component ______________mounting');
     }
+
+   /* shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.isOpen !== this.props.isOpen;
+    }*/
     render() {
         const {article, isOpen, toggleOpen} = this.props;
+        console.log('_______', 'update article');
         //const {isOpen} = this.state;
         return(
             <div ref={this.setContainerRev}>
@@ -61,13 +70,13 @@ class Article extends Component {
 
     setContainerRev = (ref) => {
         this.container = ref;
-        console.log(ref);
+        //console.log(ref);
     };
     componentDidMount() {
-        console.log('component ______mounted');
+        //console.log('component ______mounted');
     }
 }
 
-//export default toggleOpen(Article);
 export default Article;
+//export default Article;
 
