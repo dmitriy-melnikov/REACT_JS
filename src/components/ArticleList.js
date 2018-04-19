@@ -32,7 +32,7 @@ import accordion  from '../decorators/accordeon';
             <Article
                article = {article}
                isOpen = {article.id === openItemId}
-               toogleOpen = {toggleOpenItem(article.id)}
+               toggleOpen = {toggleOpenItem(article.id)}
                //isOpen = {article.id === this.state.openArticleId}
                //toggleOpen = {this.toggleOpenArticle.bind(this, article.id)}
                //toggleOpen = {this.toggleOpenArticle(article.id)}//return through carry
