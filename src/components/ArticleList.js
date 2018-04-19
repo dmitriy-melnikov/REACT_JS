@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 
 import Article from './Article';
 import CommentList from './CommentList';
+
+import { articles } from '../fixtures';
 
 
 
@@ -25,7 +29,7 @@ export default class ArticleList extends Component {
         const {articles} = this.props;
         return articles.map((article) => <li key={article.id}>
             <Article article={article}/>
-            <CommentList comments={article.comments}/>
+            <CommentList comments={article.comments} ref={this.setCommentRef}/>
         </li>);
     }
     render() {
@@ -34,5 +38,8 @@ export default class ArticleList extends Component {
                 {this.getBody()}
             </ul>
         )
+    }
+    setCommentRef = (ref) => {
+        console.log('commentRef --------',findDOMNode(ref) );
     }
 }

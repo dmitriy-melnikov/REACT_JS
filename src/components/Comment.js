@@ -11,9 +11,6 @@ class Comment extends Component{
     static defaultProps = {
         comment: {}
     };
-    state = {
-
-    };
     render(){
         const {comment} = this.props;
         return(

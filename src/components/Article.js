@@ -40,18 +40,31 @@ class Article extends Component {
         if (!isOpen) return null;
         return <section>{article.text}</section>;
     }
-
+    componentWillReceiveProps(nextProps) {
+        console.log('____', 'updating', this.props.isOpen, nextProps.isOpen);
+    }
+    componentWillMount() {
+        console.log('component ______________mounting');
+    }
     render() {
         const {article, isOpen, toggleOpen} = this.props;
         //const {isOpen} = this.state;
         return(
-            <div>
+            <div ref={this.setContainerRev}>
                 {new Date().toLocaleString()}
                 <h3>{article.title}</h3>
                 <button onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</button>
                 {this.getBody()}
             </div>
         )
+    }
+
+    setContainerRev = (ref) => {
+        this.container = ref;
+        console.log(ref);
+    };
+    componentDidMount() {
+        console.log('component ______mounted');
     }
 }
 
