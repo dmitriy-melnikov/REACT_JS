@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    devtool: "source-map",
+    /*devtool: "source-map",*/
     context: path.join(__dirname, "src"),
     entry: [
         './index.js'
@@ -12,13 +12,13 @@ module.exports = {
         publicPath: '/static/'
     },
     watch: true,
-    devServer: {
+    /*devServer: {
         proxy: [{
             path: '/api/',
             target: 'http://localhost:3001'
         }],
         historyApiFallback: true
-    },
+    },*/
     module: {
         loaders: [
             {
