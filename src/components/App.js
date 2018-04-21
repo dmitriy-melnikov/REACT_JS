@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ArticleList from './ArticleList';
 import ArticlesChart from './ArticlesChart';
+import UserForm from "./userForm";
 
 export class App extends Component{
     static propTypes = {
@@ -10,7 +11,7 @@ export class App extends Component{
     render() {
         return(
             <div>
-                Name: <input type='text' />
+                <UserForm/>
                 <ArticleList articles={this.props.articles}/>
                 <ArticlesChart articles={this.props.articles}/>
             </div>
