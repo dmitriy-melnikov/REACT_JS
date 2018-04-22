@@ -65,7 +65,7 @@ class Article extends Component {
                 {new Date().toLocaleString()}
                 <h3>{article.title}</h3>
                 <button onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</button>
-              <CSSTransitionGroup
+              <CSSTransitionGroup component="header"
                 transitionName="article"
                 transitionEnterTimeout={3000}
                 transitionLeaveTimeout={5000}
