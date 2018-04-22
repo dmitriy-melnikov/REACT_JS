@@ -22,7 +22,7 @@ export class App extends Component{
       const options = this.props.articles.map(article => {
         return {
           label: article.title,
-            value: article.is
+          value: article.id
         }
       });
         return(

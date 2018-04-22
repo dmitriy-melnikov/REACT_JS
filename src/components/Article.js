@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransitionGroup } from 'react-transition-group';
+import './article.css';
 
 import toggleOpen from '../decorators/toggleOpen';
 
@@ -63,7 +65,14 @@ class Article extends Component {
                 {new Date().toLocaleString()}
                 <h3>{article.title}</h3>
                 <button onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</button>
+              <CSSTransitionGroup
+                transitionName="article"
+                transitionEnterTimeout={3000}
+                transitionLeaveTimeout={5000}
+              >
                 {this.getBody()}
+              </CSSTransitionGroup>
+
             </div>
         )
     }
