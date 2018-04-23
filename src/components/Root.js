@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import store from '../strore';
 import { Provider } from 'react-redux';
 
-function Root(props) {
+function Root() {
     return (
         <Provider store={store}>
-            <App {...props}/>
+            <App/>
         </Provider>
     )
 }

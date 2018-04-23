@@ -4,4 +4,4 @@ import {articles} from './fixtures';
 import Root from './components/Root';
 
 render(
-    <Root articles={articles}/>, document.getElementById('container'));
+    <Root />, document.getElementById('container'));

@@ -13,15 +13,14 @@ export class App extends Component{
     }
 
     render() {
-        const {articles} = this.props;
+        //const {articles} = this.props;
         return(
             <div>
                 <UserForm/>
                 <CommentForm/>
-                <Filters articles={articles}/>
+                <Filters articles={[]}/>
                 <Counter/>
-                <ArticleList articles={articles}/>
-                <ArticlesChart articles={articles}/>
+                <ArticleList/>
             </div>
         )
     }

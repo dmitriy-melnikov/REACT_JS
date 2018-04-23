@@ -8,6 +8,8 @@ import CommentList from './CommentList';
 
 import accordion  from '../decorators/accordeon';
 
+import { connect } from 'react-redux';
+
 /*export default function ArticleList({articles}) {
     const articleElements = articles.map(article => <li><Article article = {article}/></li>)
     return(
@@ -57,4 +59,6 @@ import accordion  from '../decorators/accordeon';
         //console.log('commentRef --------',findDOMNode(ref) );
     }
 }
-export default accordion(ArticleList);
+export default connect((state) => ({
+    articles: state.articles
+}))(accordion(ArticleList));

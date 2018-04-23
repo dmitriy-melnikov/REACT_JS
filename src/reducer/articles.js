@@ -1,9 +1,10 @@
-import {articles} from '../fixtures';
+import {articles as defaultArticles} from '../fixtures';
+import { DELETE_ARTICLE } from '../constants';
 
-export default (article, action) => {
+export default (articleState = defaultArticles, action) => {
     const { type } = action;
     switch(type) {
-        case 'DELETE': return articles.find((elem, index) => elem === article)
+        case DELETE_ARTICLE: return articleState;
     }
-    return articles
+    return articleState;
 }
