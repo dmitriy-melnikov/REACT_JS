@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
-import './article.css';
+import './style.css';
 
 import toggleOpen from '../decorators/toggleOpen';
 

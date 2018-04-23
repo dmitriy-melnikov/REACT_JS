@@ -1,3 +1,3 @@
-export default (count, action) => {
+export default (count = 0, action) => {
   return count;
 }
