@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ArticleList from './ArticleList';
 import ArticlesChart from './ArticlesChart';
 import UserForm from "./userForm";
-import CommentForm from './CommentForm/index';
+import CommentForm from '../components/CommentForm';
 import Filters from './Filters';
 import Counter from './Counter';
 

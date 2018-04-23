@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 
-import Article from './Article/index';
+import Article from '../components/Article';
 import CommentList from './CommentList';
 
 import accordion  from '../decorators/accordeon';
