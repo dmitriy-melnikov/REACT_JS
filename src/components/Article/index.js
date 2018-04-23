@@ -56,6 +56,11 @@ class Article extends Component {
    /* shouldComponentUpdate(nextProps, nextState) {
         return nextProps.isOpen !== this.props.isOpen;
     }*/
+
+    handleDelete = (article) => {
+
+    };
+
     render() {
         const {article, isOpen, toggleOpen} = this.props;
         console.log('_______', 'update article');
@@ -65,6 +70,7 @@ class Article extends Component {
                 {new Date().toLocaleString()}
                 <h3>{article.title}</h3>
                 <button onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</button>
+                <button onClick={this.handleDelete}>delete article</button>
               <CSSTransitionGroup component="header"
                 transitionName="article"
                 transitionEnterTimeout={3000}
