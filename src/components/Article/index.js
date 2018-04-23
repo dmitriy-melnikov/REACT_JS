@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
 import './style.css';
 
-import toggleOpen from '../decorators/toggleOpen';
+import toggleOpen from '../../decorators/toggleOpen';
 
 /*export default function Article(props) {
     const article = props.article;

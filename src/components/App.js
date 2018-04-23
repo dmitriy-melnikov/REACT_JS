@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import ArticleList from './ArticleList';
 import ArticlesChart from './ArticlesChart';
 import UserForm from "./userForm";
-import CommentForm from '../CommentForm/';
-import Filters from '../filters';
+import CommentForm from './CommentForm/index';
+import Filters from './Filters';
+import Counter from './Counter';
 
 export class App extends Component{
     constructor(props){
@@ -18,6 +19,7 @@ export class App extends Component{
                 <UserForm/>
                 <CommentForm/>
                 <Filters articles={articles}/>
+                <Counter/>
                 <ArticleList articles={articles}/>
                 <ArticlesChart articles={articles}/>
             </div>
