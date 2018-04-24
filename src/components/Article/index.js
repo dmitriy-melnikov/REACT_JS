@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+import {connect} from 'react-redux';
+import {deleteArticle} from '../../AC';
+
 import { CSSTransitionGroup } from 'react-transition-group';
 import './style.css';
 
@@ -57,8 +61,10 @@ class Article extends Component {
         return nextProps.isOpen !== this.props.isOpen;
     }*/
 
-    handleDelete = (article) => {
-
+    handleDelete = () => {
+        const { deleteArticle, article } = this.props;
+        deleteArticle(article.id);
+        console.log('_____________', 'deleting article')
     };
 
     render() {
@@ -92,6 +98,6 @@ class Article extends Component {
     }
 }
 
-export default Article;
+export default connect(null, { deleteArticle })(Article);
 //export default Article;
 
