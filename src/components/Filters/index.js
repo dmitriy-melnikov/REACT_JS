@@ -5,12 +5,17 @@ import SelectFilter from './Select';
 import DateRange from './DateRange';
 
 export default class Filters extends Component{
+    static propTypes = {
+        articles: PropTypes.array
+    };
+
     render() {
-        const { articles } = this.props;
+        //const { articles } = this.props;
         return(
             <div>
                 <DateRange/>
-                <SelectFilter articles={articles}/>
+                <SelectFilter/>
+                {/*<SelectFilter articles={articles}/>*/}
             </div>
         )
     }

@@ -22,7 +22,7 @@ class CommentList extends Component {
     getBody(){
         const {comments, isOpen} = this.props;
         if(!isOpen) return null;
-        return comments.map(comment => <li key={comment.id}>{<Comment comment={comment}/>}</li>)
+        return comments.map(id => <li key={id}>{<Comment id={ id }/>}</li>)
     }
     render() {
         const {isOpen, toggleOpen} = this.props;

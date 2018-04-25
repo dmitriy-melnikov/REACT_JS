@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import accordion from '../../decorators/accordeon';
 import {connect} from 'react-redux';
 import {deleteArticle} from '../../AC';
 
@@ -27,9 +28,13 @@ class Article extends Component {
         }).isRequired
     };
 
-    constructor(props) {
+    state = {
+        updateIndex: 0
+    };
+
+   constructor(props) {
         super(props);
-        /*this.state = {
+        /* this.state = {
             isOpen: true
         };*/// in decorator toggleOpen
         //this.toggleOpen = this.toggleOpen.bind(this);
@@ -44,18 +49,18 @@ class Article extends Component {
 
 
 
-    getBody() {
-        const {article, isOpen} = this.props;
+    getBody = () => {
+        const {article, isOpen } = this.props;
         if (!isOpen) return null;
         return <section>{article.text}
         </section>;
-    }
-    componentWillReceiveProps(nextProps) {
+    };
+   /* componentWillReceiveProps(nextProps) {
         //console.log('____', 'updating', this.props.isOpen, nextProps.isOpen);
-    }
-    componentWillMount() {
+    }*/
+   /* componentWillMount() {
         //console.log('component ______________mounting');
-    }
+    }*/
 
    /* shouldComponentUpdate(nextProps, nextState) {
         return nextProps.isOpen !== this.props.isOpen;
@@ -73,7 +78,7 @@ class Article extends Component {
         //const {isOpen} = this.state;
         return(
             <div ref={this.setContainerRev}>
-                {new Date().toLocaleString()}
+                {/*{new Date().toLocaleString()}*/}
                 <h3>{article.title}</h3>
                 <button onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</button>
                 <button onClick={this.handleDelete}>delete article</button>
@@ -84,18 +89,17 @@ class Article extends Component {
               >
                 {this.getBody()}
               </CSSTransitionGroup>
-
             </div>
         )
     }
 
-    setContainerRev = (ref) => {
+   /* setContainerRev = (ref) => {
         this.container = ref;
         //console.log(ref);
-    };
-    componentDidMount() {
+    };*/
+   /* componentDidMount() {
         //console.log('component ______mounted');
-    }
+    }*/
 }
 
 export default connect(null, { deleteArticle })(Article);

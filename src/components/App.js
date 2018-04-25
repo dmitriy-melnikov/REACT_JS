@@ -8,9 +8,9 @@ import Filters from './Filters';
 import Counter from './Counter';
 
 export class App extends Component{
-    constructor(props){
+    /*constructor(props){
         super(props)
-    }
+    }*/
 
     render() {
         //const {articles} = this.props;
@@ -18,7 +18,7 @@ export class App extends Component{
             <div>
                 <UserForm/>
                 <CommentForm/>
-                <Filters articles={[]}/>
+                <Filters/>
                 <Counter/>
                 <ArticleList/>
             </div>
