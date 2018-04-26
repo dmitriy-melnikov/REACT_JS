@@ -20,8 +20,6 @@ class Comment extends Component{
         return(
             <div>
                 <p>{comment.text} <b>by {comment.user}</b></p>
-
-
             </div>
         )
     }
