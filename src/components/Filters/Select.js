@@ -5,12 +5,11 @@ import { changeSelection } from '../../AC';
 
 import 'react-select/dist/react-select.css';
 
-
 import PropTypes from 'prop-types';
 
 class SelectFilter extends Component{
     static propTypes = {
-        articles: PropTypes.array.isRequired
+        //articles: PropTypes.array.isRequired
     };
     /*state = {
         selection: null
