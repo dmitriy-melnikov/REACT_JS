@@ -1,6 +1,5 @@
 import React from 'react';
-import { App } from './App';
-import PropTypes from 'prop-types';
+import App from './App';
 import store from '../strore';
 import { Provider } from 'react-redux';
 

@@ -13,8 +13,8 @@ export default class Filters extends Component{
         //const { articles } = this.props;
         return(
             <div>
-                <DateRange/>
                 <SelectFilter/>
+                <DateRange/>
                 {/*<SelectFilter articles={articles}/>*/}
             </div>
         )

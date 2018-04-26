@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import connect from 'react-redux';
-import { changeDateRange } from '../../AC';
-
 import DayPicker, { DateUtils } from 'react-day-picker';
+import {connect} from 'react-redux';
+import { changeDateRange } from '../../AC';
 import 'react-day-picker/lib/style.css';
+import PropTypes from 'prop-types';
+
+
+
+
+
 
 class DateRange extends Component{
     /*state = {

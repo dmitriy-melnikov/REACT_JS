@@ -5,10 +5,12 @@ import { increment } from '../../AC';
 
 class Counter extends Component{
     static propTypes = {
-        counter: PropTypes.number
+        counter: PropTypes.number,
+        increment: PropTypes.func.isRequired
     };
     handleIncrement = () => {
         //this.props.increment();
+        //this.props.dispatchIncrement();//вызов метода который придет из объекта mapToDispatch
         /*this.props.dispatch({
             type: 'INCREMENT'
         })*/
@@ -33,7 +35,7 @@ function mapStateToProps(state) {
     }
 }
 const mapToDispatch = {
-    increment
+    dispatchIncrement: increment
 };
 const decorator = connect(mapStateToProps, mapToDispatch);
 export default decorator(Counter)*/
